@@ -13,7 +13,7 @@
 		"url": "git+ssh://git@github.com/shinesanthosh/pseudodb.git"
 	},
 	"author": "Shine Santhosh",
-	"license": "ISC",
+	"license": "MIT",
 	"bugs": {
 		"url": "https://github.com/shinesanthosh/pseudodb/issues"
 	},
