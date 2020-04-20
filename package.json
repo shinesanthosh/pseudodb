@@ -1,0 +1,24 @@
+{
+	"name": "pseudodb",
+	"version": "1.3.0",
+	"description": "Imititates a realtime database(Firebase) by storing data in a JSON File",
+	"main": "app.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "node app.js",
+		"develop": "nodemon app.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+ssh://git@github.com/shinesanthosh/pseudodb.git"
+	},
+	"author": "Shine Santhosh",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/shinesanthosh/pseudodb/issues"
+	},
+	"homepage": "https://github.com/shinesanthosh/pseudodb#readme",
+	"directories": {
+		"lib": "lib"
+	}
+}
