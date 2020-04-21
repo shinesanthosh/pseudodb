@@ -78,6 +78,14 @@ var result = pdb.getDb(db_name);
 
 ---
 
+_To find a particular document in a db_
+
+```js
+var id = pdb.findDoc(db_name, field_name, value);
+```
+
+---
+
 _To delete a db_
 
 ```js
@@ -113,6 +121,8 @@ console.log(pdb.getDoc('test', 'a')); // Logs the content of the doc with id a t
 console.log(pdb.getDb('test')); // Logs the content of the db to the console
 
 console.log(pdb.getDoc('test', 'a').name); //Since the getdoc function returns an object, you can access the fields this way
+
+console.log(pdb.findDoc('test', 'name', 'Alwin')); //Logs the id of the document which has the field 'name' as 'Alwin'
 
 pdb.deleteDb('test'); //Deletes the db
 ```
