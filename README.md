@@ -65,5 +65,32 @@ pdb.setField(db_name, id, field, value);
 _To get a details of a particular document_
 
 ```js
-var result = pdb.getField(db_name, id);
+var result = pdb.getDoc(db_name, id);
+```
+
+## Example Code
+
+```js
+const pdb = require('pseudodb');
+
+pdb.createDb('test'); //Create a db with name test
+
+pdb.addDoc('test', {
+	name: 'Elliot',
+	age: 18,
+}); /*Add a new document with a random id.
+Take a look at the new file named test to see the added document
+*/
+
+pdb.setDoc('test', 'a', { name: 'Alwin', age: 23 }); //Creates a doc with the id 'a' and stores the object
+
+pdb.setDoc('test', 'a', { name: 'Alwin', age: 20 }); //Changes the document with the id a
+
+pdb.setField('test', 'a', 'name', 'Rex'); //Changes the field name of the document with id a
+
+pdb.setField('test', 'a', 'Developer', 'No'); //Adds a new field Developer
+
+console.log(pdb.getDoc('test', 'a')); // Logs the content of the doc with id a to the console
+
+console.log(pdb.getDoc('test', 'a').name); //Since the getdoc function returns an object, you can access the fields this way
 ```
