@@ -68,6 +68,24 @@ _To get a details of a particular document_
 var result = pdb.getDoc(db_name, id);
 ```
 
+---
+
+_To get a details of a particular db_
+
+```js
+var result = pdb.getDb(db_name);
+```
+
+---
+
+_To delete a db_
+
+```js
+pdb.deleteDb(db_name);
+```
+
+---
+
 ## Example Code
 
 ```js
@@ -92,5 +110,9 @@ pdb.setField('test', 'a', 'Developer', 'No'); //Adds a new field Developer
 
 console.log(pdb.getDoc('test', 'a')); // Logs the content of the doc with id a to the console
 
+console.log(pdb.getDb('test')); // Logs the content of the db to the console
+
 console.log(pdb.getDoc('test', 'a').name); //Since the getdoc function returns an object, you can access the fields this way
+
+pdb.deleteDb('test'); //Deletes the db
 ```
