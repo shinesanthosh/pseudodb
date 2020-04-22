@@ -81,7 +81,15 @@ var result = pdb.getDb(db_name);
 _To find a particular document in a db_
 
 ```js
-var id = pdb.findDoc(db_name, field_name, value);
+var id = pdb.findDoc(db_name, field_name, value); // FInds the first occuring match and returns the id
+```
+
+---
+
+_To find documents matching a criteria in a db_
+
+```js
+var id = pdb.findAll(db_name, field_name, value); // Finds all occuring matches and returns an array of ids
 ```
 
 ---
@@ -123,6 +131,8 @@ console.log(pdb.getDb('test')); // Logs the content of the db to the console
 console.log(pdb.getDoc('test', 'a').name); //Since the getdoc function returns an object, you can access the fields this way
 
 console.log(pdb.findDoc('test', 'name', 'Alwin')); //Logs the id of the document which has the field 'name' as 'Alwin'
+
+console.log(pdb.findAll('test', 'age', 20)); //Logs an array of ids of all docs which has age as 20
 
 pdb.deleteDb('test'); //Deletes the db
 ```
