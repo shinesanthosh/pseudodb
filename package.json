@@ -1,6 +1,6 @@
 {
 	"name": "pseudodb",
-	"version": "1.3.7",
+	"version": "1.4.0",
 	"description": "Imititates a realtime database(Firebase) by storing data in a JSON File",
 	"main": "index.js",
 	"scripts": {

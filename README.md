@@ -27,6 +27,7 @@ $ npm install pseudodb
 
 - Makes code testing easier
 - Mimics Firestore
+- Now supports graphDB properties
 
 ## Functions
 
@@ -62,7 +63,7 @@ pdb.setField(db_name, id, field, value);
 
 ---
 
-_To get a details of a particular document_
+_To get details of a particular document_
 
 ```js
 var result = pdb.getDoc(db_name, id);
@@ -70,7 +71,7 @@ var result = pdb.getDoc(db_name, id);
 
 ---
 
-_To get a details of a particular db_
+_To get details of a particular db_
 
 ```js
 var result = pdb.getDb(db_name);
@@ -90,6 +91,32 @@ _To find documents matching a criteria in a db_
 
 ```js
 var id = pdb.findAll(db_name, field_name, value); // Finds all occuring matches and returns an array of ids
+```
+
+---
+
+---
+
+_To add a relation to a doc with another doc_
+
+```js
+pdb.setRel(db, from_doc, relation, to_doc); // Sets brother relation from doc with id a to doc with id b
+```
+
+---
+
+_To add a relation group to a doc with another doc_
+
+```js
+pdb.setRelGrp(db, from_doc, relation, to_doc); // Adds a  relation from a to b in the friend relation group
+```
+
+---
+
+_To get a relation of a doc_
+
+```js
+console.log(relations.getRel(db, doc, relation)); // Logs the brother relation of the doc a
 ```
 
 ---
@@ -124,6 +151,8 @@ pdb.setField('test', 'a', 'name', 'Rex'); //Changes the field name of the docume
 
 pdb.setField('test', 'a', 'Developer', 'No'); //Adds a new field Developer
 
+pdb.setRel('test', 'a', 'brother', 'b'); // Sets brother relation from doc with id a to doc with id b
+
 console.log(pdb.getDoc('test', 'a')); // Logs the content of the doc with id a to the console
 
 console.log(pdb.getDb('test')); // Logs the content of the db to the console
@@ -133,6 +162,8 @@ console.log(pdb.getDoc('test', 'a').name); //Since the getdoc function returns a
 console.log(pdb.findDoc('test', 'name', 'Alwin')); //Logs the id of the document which has the field 'name' as 'Alwin'
 
 console.log(pdb.findAll('test', 'age', 20)); //Logs an array of ids of all docs which has age as 20
+
+console.log(relations.getRel('test', 'a', 'brother')); // Logs the brother relation of the doc a
 
 pdb.deleteDb('test'); //Deletes the db
 ```
