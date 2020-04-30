@@ -1,1 +1,1 @@
-module.exports = require("./lib/pseudodb");
+module.exports = require('./lib/pseudodb');

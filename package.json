@@ -1,6 +1,6 @@
 {
 	"name": "pseudodb",
-	"version": "1.4.0",
+	"version": "1.4.2",
 	"description": "Imititates a realtime database(Firebase) by storing data in a JSON File",
 	"main": "index.js",
 	"scripts": {
@@ -12,7 +12,7 @@
 	},
 	"author": "Shine Santhosh",
 	"private": false,
-	"license": "MIT",
+	"license": "GPL3",
 	"bugs": {
 		"url": "https://github.com/shinesanthosh/pseudodb/issues"
 	},
