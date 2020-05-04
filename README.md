@@ -129,6 +129,12 @@ pdb.deleteDb(db_name);
 
 ---
 
+_To Monitor Changes in a db_
+
+```js
+subscribe(db).on('dbChange', callBack(currentDbContent, previousDbContent));
+```
+
 ## Example Code
 
 ```js
@@ -162,6 +168,10 @@ console.log(pdb.getDoc('test', 'a').name); //Since the getdoc function returns a
 console.log(pdb.findDoc('test', 'name', 'Alwin')); //Logs the id of the document which has the field 'name' as 'Alwin'
 
 console.log(pdb.findAll('test', 'age', 20)); //Logs an array of ids of all docs which has age as 20
+
+subscribe('test').on('dbChange', (curr, prev) =>
+	console.log('Current: ', curr, ' Previous: ', prev)
+); // Monitors the db and Logs current and previous content of the db when db is changed
 
 console.log(relations.getRel('test', 'a', 'brother')); // Logs the brother relation of the doc a
 
