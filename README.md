@@ -42,7 +42,7 @@ pdb.createDb(db_name);
 _To add a new document with a random id:_
 
 ```js
-pdb.addDoc(db_name, data_Object);
+var id = pdb.addDoc(db_name, data_Object); //Returns the randomly created id
 ```
 
 ---
@@ -100,7 +100,7 @@ var id = pdb.findAll(db_name, field_name, value); // Finds all occuring matches 
 _To add a relation to a doc with another doc_
 
 ```js
-pdb.setRel(db, from_doc, relation, to_doc); // Sets brother relation from doc with id a to doc with id b
+pdb.setRel(db, from_doc, relation, to_doc); // Sets relation from doc with id a to doc with id b
 ```
 
 ---
@@ -108,7 +108,7 @@ pdb.setRel(db, from_doc, relation, to_doc); // Sets brother relation from doc wi
 _To add a relation group to a doc with another doc_
 
 ```js
-pdb.setRelGrp(db, from_doc, relation, to_doc); // Adds a  relation from a to b in the friend relation group
+pdb.setRelGrp(db, from_doc, relation, to_doc); // Adds a  relation from a to b in the relation group
 ```
 
 ---
@@ -116,7 +116,15 @@ pdb.setRelGrp(db, from_doc, relation, to_doc); // Adds a  relation from a to b i
 _To get a relation of a doc_
 
 ```js
-console.log(relations.getRel(db, doc, relation)); // Logs the brother relation of the doc a
+console.log(relations.getRel(db, doc, relation)); // Logs the relation of the doc
+```
+
+---
+
+_To delete a doc_
+
+```js
+pdb.deleteDoc(db_name, doc_id);
 ```
 
 ---
@@ -174,6 +182,8 @@ subscribe('test').on('dbChange', (curr, prev) =>
 ); // Monitors the db and Logs current and previous content of the db when db is changed
 
 console.log(relations.getRel('test', 'a', 'brother')); // Logs the brother relation of the doc a
+
+pdb.deleteDoc('test', 'a'); // Deletes the doc with id a
 
 pdb.deleteDb('test'); //Deletes the db
 ```
